@@ -1,2 +1,2 @@
-spl_add_component(components/main)
-spl_add_component(components/component)
+spl_add_component(src/main)
+spl_add_component(src/magical_number)

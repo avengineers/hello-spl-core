@@ -76,6 +76,18 @@
                 }
             },
             "problemMatcher": []
+        },
+        {
+            "label": "open report html",
+            "command": "${workspaceFolder}/build/${input:variant}/test/src/${input:component}/reports/html/index.html",
+            "type": "shell",
+            "presentation": {
+                "reveal": "always"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
         }
     ],
     "inputs": [
