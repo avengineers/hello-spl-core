@@ -1,0 +1,28 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+conan = {version="==1.59.0"}
+cookiecutter = "*"
+gcovr = "*"
+hammocking = "*"
+kconfiglib = "*"
+pytest = "*"
+pytest-cov = "*"
+pipenv = "*"
+sphinx = "*"
+sphinx-rtd-theme = "*"
+sphinxcontrib-mermaid = "*"
+sphinx-needs = "*"
+sphinxcontrib-plantuml = "*"
+sphinx-test-reports = "*"
+doxysphinx = "*"
+
+[dev-packages]
+flake8 = "*"
+black = "*"
+
+[requires]
+python_version = "3.11"

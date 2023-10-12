@@ -1,0 +1,14 @@
+{
+  "variant": {
+    "choices": {"CustA/Var1": {
+        "buildType": "CustA_Var1",
+        "long": "select to build variant 'CustA/Var1'",
+        "settings": {
+          "FLAVOR": "CustA",
+          "SUBSYSTEM": "Var1"
+        },
+        "short": "CustA/Var1"
+      }},
+    "default": "CustA/Var1"
+  }
+}
