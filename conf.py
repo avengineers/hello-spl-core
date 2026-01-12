@@ -19,9 +19,12 @@ release = "0.0.0"
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = []
-exclude_patterns = [".git", ".venv", "build/modules", "**/.venv"]
-include_patterns = ["index.rst", "doc/**"]
+exclude_patterns = [".git", ".venv", "build/modules", "**/.venv", "README.md"]
+include_patterns = ["*.md", "doc/**", "src/*/doc/**"]
 
+
+# Add MyST parser for markdown support
+extensions.append("myst_parser")
 
 # mermaid config - @see https://pypi.org/project/sphinxcontrib-mermaid/
 extensions.append("sphinxcontrib.mermaid")
@@ -62,7 +65,10 @@ extensions.append("sphinxcontrib.test_reports")
 tr_report_template = "doc/test_report_template.txt"
 
 # The suffix of source filenames.
-source_suffix = [".rst"]
+source_suffix = {
+    ".rst": None,
+    ".md": None,
+}
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
@@ -90,6 +96,8 @@ html_theme_options = {
 
 # Check if the SPHINX_BUILD_CONFIGURATION_FILE environment variable exists
 # and if so, load the JSON file and set the 'html_context' variable
+html_context = {}
+
 if "SPHINX_BUILD_CONFIGURATION_FILE" in os.environ:
     with open(os.environ["SPHINX_BUILD_CONFIGURATION_FILE"], "r") as file:
         html_context = json.load(file)
